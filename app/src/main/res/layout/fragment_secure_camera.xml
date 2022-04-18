@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stream="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SecureCameraFragment">
+
+
+    <Button
+        android:id="@+id/btn_shot"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="스냅샷보기"
+        stream:layout_constraintEnd_toStartOf="@+id/btn_stream"
+        stream:layout_constraintStart_toStartOf="parent"
+        stream:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_stream"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="81dp"
+        android:text="스트림보기"
+        stream:layout_constraintEnd_toEndOf="parent"
+        stream:layout_constraintStart_toEndOf="@+id/btn_shot"
+        stream:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        stream:layout_constraintBottom_toBottomOf="parent"
+        stream:layout_constraintEnd_toEndOf="parent"
+        stream:layout_constraintStart_toStartOf="parent"
+        stream:layout_constraintTop_toBottomOf="@+id/btn_shot">
+
+        <ImageView
+            android:id="@+id/imageView"
+
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:visibility="visible"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:max="90"
+            android:min="-90"
+            android:progress="0" />
+
+        <com.github.niqdev.mjpeg.MjpegSurfaceView
+            android:id="@+id/mjpeg"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            stream:type="stream_default" />
+
+        <TextView
+            android:id="@+id/txtAngle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="80dp"
+            android:text="카메라 각도: 0" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
