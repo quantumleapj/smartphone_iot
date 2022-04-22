@@ -21,7 +21,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage
 import java.lang.Exception
 
 private const val PUB_TOPIC1="iot/camera/angle"
-private const val SERVER_URI1="tcp://192.168.219.104:1883"
+private const val SERVER_URI1="tcp://192.168.219.105:1883"
 //컴주소
 
 class SecureCameraFragment : Fragment() {

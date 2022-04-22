@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="카메라" />
         <item
+            android:id="@+id/nav_record"
+            android:icon="@drawable/ic_record"
+            android:title="녹화" />
+        <item
             android:id="@+id/nav_test"
             android:icon="@drawable/ic_menu_internet"
             android:title="웹서핑" />

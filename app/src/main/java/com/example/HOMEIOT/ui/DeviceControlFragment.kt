@@ -23,7 +23,7 @@ const val PUB_TOPIC_led_livingroom="iot/led/livingroom"
 const val PUB_TOPIC_led_kitchen="iot/led/kitchen"
 const val PUB_TOPIC_led_mainroom="iot/led/mainroom"
 const val PUB_TOPIC_blind="iot/blind"
-const val SERVER_URI="tcp://192.168.219.104:1883"
+const val SERVER_URI="tcp://192.168.219.105:1883"
 //컴주소
 class DeviceControlFragment : Fragment() {
 
