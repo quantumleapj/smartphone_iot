@@ -12,6 +12,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.HOMEIOT.Mqtt
 import com.example.HOMEIOT.OpenWeather
+import com.example.HOMEIOT.R
 import com.example.HOMEIOT.databinding.FragmentDeviceControlBinding
 import com.example.HOMEIOT.databinding.FragmentInCameraBinding
 
@@ -70,11 +71,12 @@ class InCameraFragment : Fragment() {
             if (isChecked){
                 mqttClient.publish(PUB_TOPIC_record,"on")
                 Toast.makeText(this.context,"녹화를 시작하겠습니다",Toast.LENGTH_SHORT).show()
-
+                binding.btnRecord.setBackgroundDrawable(resources.getDrawable(R.drawable.stopbutton))
             }
             else{
                 mqttClient.publish(PUB_TOPIC_record,"off")
                 Toast.makeText(this.context,"녹화가 종료되었습니다.",Toast.LENGTH_SHORT).show()
+                binding.btnRecord.setBackgroundDrawable(resources.getDrawable(R.drawable.record))
             }
 
 
@@ -82,6 +84,7 @@ class InCameraFragment : Fragment() {
         }
         binding.btnCapture.setOnClickListener{
                 mqttClient.publish(PUB_TOPIC_capture,"captured")
+                Toast.makeText(this.context,"캡쳐가 완료되었습니다.",Toast.LENGTH_SHORT).show()
         }
     }
 
