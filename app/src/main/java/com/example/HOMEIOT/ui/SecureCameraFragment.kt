@@ -21,7 +21,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage
 import java.lang.Exception
 
 private const val PUB_TOPIC1="iot/camera/angle"
-private const val SERVER_URI1="tcp://192.168.219.105:1883"
+private const val SERVER_URI1="tcp://192.168.219.103:1883"
 //컴주소
 
 class SecureCameraFragment : Fragment() {
@@ -61,7 +61,7 @@ class SecureCameraFragment : Fragment() {
         binding.btnShot.setOnClickListener{
             binding.mjpeg.visibility= View.INVISIBLE
             binding.imageView.visibility=View.VISIBLE
-            val url="http://192.168.219.106:8000/mjpeg/snapshot"
+            val url="http://192.168.219.104:8000/mjpeg/snapshot"
             Glide.with(this)
                 .load(url)
                 .skipMemoryCache(true)
@@ -74,7 +74,7 @@ class SecureCameraFragment : Fragment() {
             binding.imageView.visibility=View.INVISIBLE
 
             Mjpeg.newInstance()
-                .open("http://192.168.219.106:8000/mjpeg/stream",5)
+                .open("http://192.168.219.104:8000/mjpeg/stream",5)
                 .subscribe{inputStream: MjpegInputStream?->
                     binding.mjpeg.setSource(inputStream!!)
                     binding.mjpeg.setDisplayMode(DisplayMode.BEST_FIT)
